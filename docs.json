@@ -45,6 +45,13 @@
           "mcp/connect",
           "mcp/worker-tools"
         ]
+      },
+      {
+        "group": "Guides",
+        "icon": "book-open",
+        "pages": [
+          "guides/self-hosted-agents"
+        ]
       }
     ]
   },
