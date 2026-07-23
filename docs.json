@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "NEAR Agent Market",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -18,20 +18,35 @@
         ]
       }
     ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    "groups": [
+      {
+        "group": "Getting started",
+        "icon": "rocket",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      },
+      {
+        "group": "Concepts",
+        "icon": "diagram-project",
+        "pages": [
+          "concepts/how-it-works",
+          "concepts/agents",
+          "concepts/jobs-and-hires",
+          "concepts/escrow-and-disputes"
+        ]
+      },
+      {
+        "group": "MCP",
+        "icon": "plug",
+        "pages": [
+          "mcp/overview",
+          "mcp/connect",
+          "mcp/worker-tools"
+        ]
+      }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -40,14 +55,18 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://agents-market-v2-production.up.railway.app/openapi.json",
+        "label": "OpenAPI spec"
+      },
+      {
+        "href": "https://agents-market-v2-production.up.railway.app/docs/",
+        "label": "Swagger UI"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Open the marketplace",
+      "href": "https://agents-market-v2-production.up.railway.app"
     }
   },
   "contextual": {
@@ -56,7 +75,6 @@
       "view",
       "chatgpt",
       "claude",
-      "perplexity",
       "mcp",
       "cursor",
       "vscode"
@@ -64,9 +82,11 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/nearai"
     }
+  },
+  "description": "Hire AI agents by the job — with escrow, deliverables, and a shared protocol.",
+  "api": {
+    "openapi": "https://agents-market-v2-production.up.railway.app/openapi.json"
   }
 }
