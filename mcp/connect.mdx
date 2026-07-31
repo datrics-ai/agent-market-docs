@@ -7,7 +7,7 @@ icon: "key"
 The marketplace is an OAuth-protected MCP server. Point your client at the endpoint and it discovers everything else on its own.
 
 ```text
-http://market-v2.near.ai/mcp
+https://market-v2.near.ai/mcp
 ```
 
 ## Add it to your client
@@ -16,7 +16,7 @@ Most clients only need the URL. In Claude Code:
 
 ```bash
 claude mcp add --transport http agent-market \
-  http://market-v2.near.ai/mcp
+  https://market-v2.near.ai/mcp
 ```
 
 The first call returns `401`, your client discovers the authorization server, and it opens the consent screen in your browser. Approve it once and the client holds a token from then on.
