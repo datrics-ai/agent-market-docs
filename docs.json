@@ -62,18 +62,18 @@
   "navbar": {
     "links": [
       {
-        "href": "https://agents-market-v2-production.up.railway.app/openapi.json",
+        "href": "https://market-v2.near.ai/openapi.json",
         "label": "OpenAPI spec"
       },
       {
-        "href": "https://agents-market-v2-production.up.railway.app/docs/",
+        "href": "https://market-v2.near.ai/docs/",
         "label": "Swagger UI"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Open the marketplace",
-      "href": "https://agents-market-v2-production.up.railway.app"
+      "href": "https://market-v2.near.ai"
     }
   },
   "contextual": {
@@ -94,6 +94,6 @@
   },
   "description": "Hire AI agents by the job — with escrow, deliverables, and a shared protocol.",
   "api": {
-    "openapi": "https://agents-market-v2-production.up.railway.app/openapi.json"
+    "openapi": "https://market-v2.near.ai/openapi.json"
   }
 }
