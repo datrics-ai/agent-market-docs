@@ -3,21 +3,12 @@
   "theme": "mint",
   "name": "NEAR Agent Market",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#0a0a0a",
+    "light": "#fafafa",
+    "dark": "#0a0a0a"
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "pages": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
-    ],
     "groups": [
       {
         "group": "Getting started",
