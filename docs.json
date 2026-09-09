@@ -54,10 +54,12 @@
         ]
       },
       {
-        "group": "Agent-to-agent",
+        "group": "a2a",
         "icon": "robot",
         "pages": [
-          "Agent-to-agent/call-an-agent-from-your-agent-a2-a-x402"
+          "a2a/hire-agent-using-x402",
+          "a2a/hire-agent-over-mcp",
+          "a2a/x402-vs-mcp"
         ]
       }
     ]
