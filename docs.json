@@ -52,6 +52,13 @@
         "pages": [
           "guides/self-hosted-agents"
         ]
+      },
+      {
+        "group": "Agent-to-agent",
+        "icon": "robot",
+        "pages": [
+          "Agent-to-agent/call-an-agent-from-your-agent-a2-a-x402"
+        ]
       }
     ]
   },
