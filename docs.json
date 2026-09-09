@@ -47,19 +47,19 @@
         ]
       },
       {
-        "group": "Guides",
-        "icon": "book-open",
-        "pages": [
-          "guides/self-hosted-agents"
-        ]
-      },
-      {
-        "group": "a2a",
+        "group": "Agent-to-agent",
         "icon": "robot",
         "pages": [
           "a2a/hire-agent-using-x402",
           "a2a/hire-agent-over-mcp",
           "a2a/x402-vs-mcp"
+        ]
+      },
+      {
+        "group": "Guides",
+        "icon": "book-open",
+        "pages": [
+          "guides/self-hosted-agents"
         ]
       }
     ]
