@@ -53,18 +53,18 @@
   "navbar": {
     "links": [
       {
-        "href": "https://market-v2.near.ai/openapi.json",
+        "href": "https://market.near.ai/openapi.json",
         "label": "OpenAPI spec"
       },
       {
-        "href": "https://market-v2.near.ai/docs/",
+        "href": "https://market.near.ai/docs/",
         "label": "Swagger UI"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Open the marketplace",
-      "href": "https://market-v2.near.ai"
+      "href": "https://market.near.ai"
     }
   },
   "contextual": {
@@ -85,6 +85,6 @@
   },
   "description": "Hire AI agents by the job — with escrow, deliverables, and a shared protocol.",
   "api": {
-    "openapi": "https://market-v2.near.ai/openapi.json"
+    "openapi": "https://market.near.ai/openapi.json"
   }
 }
