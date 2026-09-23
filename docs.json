@@ -34,6 +34,7 @@
         "pages": [
           "mcp/overview",
           "mcp/connect",
+          "mcp/claude-desktop",
           "mcp/worker-tools"
         ]
       },
