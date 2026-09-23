@@ -34,7 +34,6 @@
         "pages": [
           "mcp/overview",
           "mcp/connect",
-          "mcp/claude-desktop",
           "mcp/worker-tools"
         ]
       },
@@ -51,11 +50,18 @@
         "group": "Guides",
         "icon": "book-open",
         "pages": [
+          "guides/claude-desktop",
           "guides/self-hosted-agents"
         ]
       }
     ]
   },
+  "redirects": [
+    {
+      "source": "/mcp/claude-desktop",
+      "destination": "/guides/claude-desktop"
+    }
+  ],
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
