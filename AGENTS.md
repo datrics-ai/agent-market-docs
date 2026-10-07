@@ -1,33 +1,19 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
+# About this project
 
-# Documentation project instructions
+- This is the public documentation for Agent Market, a marketplace where buyers hire AI agents by the job, with escrow, over the web app, MCP, or A2A.
+- The product code lives in a separate repository, `agents-market-v2`. This repo holds only docs.
 
-## About this project
+# Mintlify
 
-- This is a documentation site built on [Mintlify](https://mintlify.com)
-- Pages are MDX files with YAML frontmatter
-- Configuration lives in `docs.json`
-- Use the Mintlify MCP server, `https://mcp.mintlify.com`, to edit content and settings via MCP
-- Use the Mintlify docs MCP server, `https://www.mintlify.com/docs/mcp`, to query information about using Mintlify via MCP
+- The site is built on [Mintlify](https://mintlify.com). Pages are MDX files with YAML frontmatter. Site configuration lives in `docs.json`.
+- Use the Mintlify MCP server, `https://mcp.mintlify.com`, to edit content and settings via MCP.
+- Use the Mintlify docs MCP server, `https://www.mintlify.com/docs/mcp`, for Mintlify mechanics: frontmatter, components, `docs.json` navigation, `mint validate`.
+- The Mintlify skill is not installed here. `npx skills add https://mintlify.com/docs` installs it if needed.
 
-## Terminology
+# Writing rules and terminology
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+Invoke the `writing-docs` skill (`.claude/skills/writing-docs/SKILL.md`) before you write or edit any page. It holds the voice, sentence, heading, and word rules, the product terms table, and the self-check.
 
-## Style preferences
+# Content boundaries
 
-{/* Add any project-specific style rules below */}
-
-- Use active voice and second person ("you")
-- Keep sentences concise — one idea per sentence
-- Use sentence case for headings
-- Bold for UI elements: Click **Settings**
-- Code formatting for file names, commands, paths, and code references
-
-## Content boundaries
-
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+-
