@@ -1,9 +1,9 @@
 ---
-name: writing-docs
+name: writing-plain-english
 description: Writes and edits pages of the public Agent Market documentation in plain English. ALWAYS invoke this skill when the user asks to write a docs page, add a guide, edit or rewrite a page or section, fix the wording of a page, or review docs for plain English. Do not write or edit an .mdx page directly — use this skill first.
 ---
 
-# Writing Docs
+# Writing Plain English
 
 Writing rules for the public Agent Market documentation. Every page under this repo must follow them. The rules cover the words and sentences on a page. They do not cover Mintlify components, frontmatter, or navigation.
 

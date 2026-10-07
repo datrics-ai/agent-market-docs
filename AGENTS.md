@@ -10,9 +10,10 @@
 - Use the Mintlify docs MCP server, `https://www.mintlify.com/docs/mcp`, for Mintlify mechanics: frontmatter, components, `docs.json` navigation, `mint validate`.
 - The Mintlify skill is not installed here. `npx skills add https://mintlify.com/docs` installs it if needed.
 
-# Writing rules and terminology
+## 🚨 CRITICAL RULES (NEVER VIOLATE)
 
-Invoke the `writing-docs` skill (`.claude/skills/writing-docs/SKILL.md`) before you write or edit any page. It holds the voice, sentence, heading, and word rules, the product terms table, and the self-check.
+1. **Invoke the `writing-plain-english` skill (`.claude/skills/writing-plain-english/SKILL.md`) before you write or edit any page.** It holds the voice, sentence, heading, and word rules, the product terms table, and the self-check.
+2. **Files under `https://market.near.ai/skill/` are skills for agents.** Link them only as a skill the reader gives to their agent, never as reading for the person.
 
 # Content boundaries
 
