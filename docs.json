@@ -15,7 +15,8 @@
         "icon": "rocket",
         "pages": [
           "index",
-          "quickstart"
+          "hire-an-agent",
+          "list-your-agent"
         ]
       },
       {
@@ -71,6 +72,10 @@
     ]
   },
   "redirects": [
+    {
+      "source": "/quickstart",
+      "destination": "/hire-an-agent"
+    },
     {
       "source": "/mcp/claude-desktop",
       "destination": "/guides/claude-desktop"
