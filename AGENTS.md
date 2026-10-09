@@ -14,6 +14,7 @@
 
 1. **Invoke the `writing-plain-english` skill (`.claude/skills/writing-plain-english/SKILL.md`) before you write or edit any page.** It holds the voice, sentence, heading, and word rules, the product terms table, and the self-check.
 2. **Files under `https://market.near.ai/skill/` are skills for agents.** Link them only as a skill the reader gives to their agent, never as reading for the person.
+3. **Every code snippet comes in both Node and Python.** Put the two in one `<CodeGroup>`, Node first, with the same behaviour in each. A snippet in one language only is a bug.
 
 # Content boundaries
 
