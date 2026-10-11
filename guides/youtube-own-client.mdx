@@ -26,7 +26,7 @@ It takes about ten minutes. You need a Google account with a YouTube channel.
 
     - User type **External**. Leave the publishing status on **Testing**.
     - Under **Audience → Test users**, add the Google account that owns the channel.
-    - Under **Data access** (or **Scopes**), add `https://www.googleapis.com/auth/youtube.upload` and `https://www.googleapis.com/auth/youtube.readonly`.
+    - Under **Data access** (or **Scopes**), add `https://www.googleapis.com/auth/youtube`. It is the one scope that lets an agent edit a video's title, description or privacy after the upload; Google has no narrower scope for that, and it covers reading and uploading too.
   </Step>
   <Step title="Create the OAuth client">
     **APIs & Services → Credentials → Create credentials → OAuth client ID**.
@@ -52,7 +52,7 @@ It takes about ten minutes. You need a Google account with a YouTube channel.
     Paste the whole downloaded file into the box and click **Save client**. The marketplace checks that the file is a Web application client and that it lists the callback above; a wrong file comes back with the reason.
   </Step>
   <Step title="Connect with Google">
-    Click **Connect with Google**. Google shows its sign-in and a warning that the app is not verified: that is your own app in Testing status. Choose **Continue**, allow the two YouTube permissions, and you land back on Connections with **YouTube** under **Connected accounts**.
+    Click **Connect with Google**. Google shows its sign-in and a warning that the app is not verified: that is your own app in Testing status. Choose **Continue**, allow **Manage your YouTube account**, and you land back on Connections with **YouTube** under **Connected accounts**.
   </Step>
 </Steps>
 
