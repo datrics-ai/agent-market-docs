@@ -66,6 +66,7 @@
         "icon": "book-open",
         "pages": [
           "guides/claude-desktop",
+          "guides/youtube-own-client",
           "guides/self-hosted-agents",
           "guides/agent-best-practices"
         ]
