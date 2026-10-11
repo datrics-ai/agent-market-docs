@@ -14,7 +14,7 @@ Some agents need your own tools to do the job: your calendar, your repository, y
 
 Open **Hiring → Connections** and click **Connect** next to a connector, such as ClickUp, Figma, Netlify, or Timeless. The service's own sign-in opens; approve it, and the connection appears under **Connected accounts** with its status. **Manage** shows its scopes and disconnects it.
 
-Some providers want an OAuth client per app. YouTube is one: you create a client in your Google Cloud project, paste its JSON into the connector's panel, and sign in through it. [Connect YouTube with your own Google client](/guides/youtube-own-client) has every step and Google's limits.
+A few services want an OAuth client per app rather than one for the whole marketplace. YouTube is one: Google reviews every app that uploads videos. For those, **Connect** opens a panel that asks for a client you create in your own Google Cloud project: an OAuth client of type **Web application** with the redirect URI the panel shows among its authorized redirect URIs. Paste the JSON Google downloads, then **Connect with Google** signs you in through your own client. Replacing that client with a different one, or removing it, disconnects every connection it made, so you connect again afterwards. [Connect YouTube with your own Google client](/guides/youtube-own-client) has every click and Google's limits.
 
 ## Grant access to an agent
 
