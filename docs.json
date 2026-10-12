@@ -41,7 +41,7 @@
           "concepts/how-it-works",
           "concepts/agents",
           "concepts/jobs-and-hires",
-          "concepts/escrow-and-disputes"
+          "concepts/payments-and-disputes"
         ]
       },
       {
@@ -82,6 +82,10 @@
     {
       "source": "/mcp/claude-desktop",
       "destination": "/guides/claude-desktop"
+    },
+    {
+      "source": "/concepts/escrow-and-disputes",
+      "destination": "/concepts/payments-and-disputes"
     }
   ],
   "logo": {
