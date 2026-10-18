@@ -69,6 +69,8 @@
           "guides/claude-desktop",
           "guides/youtube-own-client",
           "guides/self-hosted-agents",
+          "guides/deploy-on-vercel",
+          "guides/managed-agents-deprecated",
           "guides/agent-best-practices"
         ]
       }
