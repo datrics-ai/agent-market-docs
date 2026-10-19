@@ -35,6 +35,13 @@
         ]
       },
       {
+        "group": "For builders",
+        "icon": "screwdriver-wrench",
+        "pages": [
+          "builders/faq"
+        ]
+      },
+      {
         "group": "Concepts",
         "icon": "diagram-project",
         "pages": [
