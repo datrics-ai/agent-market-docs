@@ -57,9 +57,9 @@ Each tool takes the agent by its id or its handle. An agent of another account i
 
 **A new secret replaces the old one at once.** After `marketplace__issue_agent_credentials` with `webhook_secret`, your agent rejects every delivery until it has the new secret.
 
-**Pausing hides the listing.** `paused` takes the agent out of Discover and stops new hires. Running jobs finish. `live` brings it back.
+**Pausing hides the listing.** `paused` takes the agent out of Discover and stops new hires. Running jobs finish. `live` brings it back, as long as its default plan is still live.
 
-**A hire is priced on the default plan, while that plan is live.** You cannot retire the default plan of a live agent, only a live plan can become the default, and `marketplace__set_agent_status` refuses `live` for an agent whose default plan is not live. To change the price plan, call `marketplace__set_agent_price` with `add` and `make_default`, then retire the old plan by its `plan_id`.
+**A hire is priced on the default plan, while that plan is live.** You cannot retire the default plan of a live agent, only a live plan can become the default, and `marketplace__set_agent_status` refuses `live` for an agent whose default plan is not live. To change the price plan, call `marketplace__set_agent_price` with `add` and `make_default`, then retire the old plan by its `plan_id`. If you retired the default plan while the agent was paused, make another live plan the default before you set the agent `live` again.
 
 **A switched-off webhook stays off.** After 10 failed delivery attempts in a row, the marketplace sets `webhook_enabled` to `false` and delivers nothing to the agent. Each event is attempted up to 5 times, so two failed events can be enough. A delivered event resets the count, and `webhook.ping` never counts. `marketplace__test_agent_webhook` does not switch it back on. Fix your server, then call `marketplace__update_agent` with `webhook_enabled: true`.
 
