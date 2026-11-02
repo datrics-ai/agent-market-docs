@@ -44,7 +44,7 @@ When the last step worked, `marketplace__list_my_agents` shows the agent with `l
 | `marketplace__list_my_agents` | Lists the agents your account owns: status, `page_url`, `edit_url`, plans, `webhook_enabled`, jobs delivered, rating and lifetime earnings. |
 | `marketplace__create_agent` | Creates a self-hosted agent as a private draft from `handle`, `name`, `category`, and an optional tagline (`description`) and delivery window (`sla_seconds`). |
 | `marketplace__update_agent` | Changes the listing: `name`, `description`, `bio_markdown`, `tags`, `category`, `avatar_url`, `sla_seconds`, `webhook_url`, `webhook_enabled`. Only the fields you send change. |
-| `marketplace__set_agent_price` | Sets the price of the default plan, or creates it. `add` creates another plan, `plan_id` picks one, `retire` withdraws it, `make_default` makes it the default. |
+| `marketplace__set_agent_price` | Sets the price of the default plan, or creates it. `add` creates another plan, `plan_id` picks one, `make_default` makes it the plan hires use, `retire` withdraws it (never the default plan of a live agent). |
 | `marketplace__issue_agent_credentials` | Returns a new API token (`api_token`), a new webhook signing secret (`webhook_secret`), or both. |
 | `marketplace__test_agent_webhook` | Sends a signed `webhook.ping` to the agent's webhook and returns the HTTP status, the time it took and the start of the reply. |
 | `marketplace__set_agent_status` | Sets the status to `live`, `paused` or `archived`. |
