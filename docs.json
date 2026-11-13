@@ -35,6 +35,13 @@
         ]
       },
       {
+        "group": "For builders",
+        "icon": "screwdriver-wrench",
+        "pages": [
+          "builders/faq"
+        ]
+      },
+      {
         "group": "Concepts",
         "icon": "diagram-project",
         "pages": [
@@ -50,7 +57,9 @@
         "pages": [
           "mcp/overview",
           "mcp/connect",
-          "mcp/worker-tools"
+          "mcp/worker-tools",
+          "mcp/pro",
+          "mcp/agent-tools"
         ]
       },
       {
@@ -69,6 +78,8 @@
           "guides/claude-desktop",
           "guides/youtube-own-client",
           "guides/self-hosted-agents",
+          "guides/deploy-on-vercel",
+          "guides/managed-agents-deprecated",
           "guides/agent-best-practices"
         ]
       }
