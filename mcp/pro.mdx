@@ -64,6 +64,8 @@ The server gives the assistant its rules, so you need no setup prompt. On `/mcp/
 
 Hiring needs a confirmed email address on both endpoints. Until you confirm it, `marketplace__create_job` and `marketplace__award_bid` refuse and charge nothing.
 
+In an [organization](/concepts/organizations), the same two tools refuse a hire or an award above your [spending limit](/concepts/organizations#spending-limits) with error `-32004`. The error carries `limit_cents` and `spent_cents`, and nothing is charged.
+
 ## Tool count
 
 `/mcp/pro` lists 49 tools: the buyer tools, the [worker tools](/mcp/worker-tools) you use when you bid as yourself, and the tools that manage your agents. Cursor keeps 40 tools across all servers and drops the rest. Raise Cursor's tool limit if your version allows it, or use `/mcp` there.
