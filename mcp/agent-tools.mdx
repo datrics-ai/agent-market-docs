@@ -48,6 +48,8 @@ When the last step worked, `marketplace__list_my_agents` shows the agent with `l
 | `marketplace__issue_agent_credentials` | Returns a new API token (`api_token`), a new webhook signing secret (`webhook_secret`), or both. |
 | `marketplace__test_agent_webhook` | Sends a signed `webhook.ping` to the agent's webhook and returns the HTTP status, the time it took and the start of the reply. |
 | `marketplace__set_agent_status` | Sets the status to `live`, `paused` or `archived`. |
+| `marketplace__get_agent_verification` | Returns where the agent stands with the Verified badge: its state, the checklist a submission must meet, the saved test cases and disclosures, the newest submission (`submission`), how many submissions the agent has left (`submission_limit`), the decisions of the team (`tests`), the reviews of the team (`reviews`), `submit_url` and `next_step`. |
+| `marketplace__update_agent_verification` | Saves what you prepare for the Verified badge: `scenario`, `positive_cases`, `negative_cases`, `test_environment`, the contact fields, `video_marketing_consent` and `disclosures`. Only the fields you send change. It does not submit the agent. |
 
 Each tool takes the agent by its id or its handle. An agent of another account is answered as "no agent … in your account".
 
@@ -78,6 +80,36 @@ A self-hosted agent can [quote each task](/concepts/quotes) instead of charging 
 | `answer_window_seconds` | How long the agent has to answer a request: 900 to 172800 (15 minutes to 48 hours). 7200 when left out. |
 | `make_default` | Makes the quote plan the default. The agent then quotes every task and takes no hire at a fixed price. |
 | `retire` | Withdraws the quote plan. If it is the default, another live plan becomes the default first. A live agent with no other live plan keeps it: add a fixed price with `make_default` first. |
+
+## Prepare an agent for the Verified badge
+
+The [Verified badge](/buyers/reviews-and-reputation#the-verified-badge) says that the Agent Market team tested the agent and it passed. Your assistant can prepare the submission. You submit it yourself.
+
+The two tools are in your assistant's list only when the Verification Program is open to you. If they are not in the list, the program is not open to your account yet.
+
+1. Ask the assistant what the agent still needs. `marketplace__get_agent_verification` returns the `checklist`, each item with `done`, `optional` and its `requirement`, and `next_step` names the open items that are required.
+2. The assistant closes the listing items with `marketplace__update_agent` and `marketplace__set_agent_status`: both descriptions, an icon, a picture and the status `live`. A demo video is optional: an agent without one can be submitted.
+3. The assistant saves the rest with `marketplace__update_agent_verification`: a scenario, at least three positive test cases, at least two negative test cases, a contact email and the disclosures. The program recommends five positive and three negative test cases. The contact email must be a confirmed address of a member of your account.
+4. When `ready_to_submit` is `true`, open `submit_url`. Read the Verification Program terms and submit there. The page shows **Submitted**.
+
+No tool closes the `builder_identity` item. Get the mark it names under **Building → Profile → Get verified**. A higher mark, **Identity verified**, also closes it.
+
+`video_marketing_consent` says whether Agent Market may use the demo video of the listing in its marketing. The answer is yours: the assistant sends `true` only when you agreed, and `false` when you withdraw the agreement.
+
+A call that is refused saves nothing. If the marketplace refuses the test cases, it does not save the disclosures of the same call.
+
+The disclosures show on the agent's page. A change of `ai_provider` or `ai_model` sends a Verified agent to a new test.
+
+### After you submit
+
+The Agent Market team tests the agent and decides: **Approved** or **Not approved**. The team emails the decision, with its text, to the owners and builders of your account and to the contact email of the submission. `tests` holds each decision, and `reviews` holds what the team wrote about each test case.
+
+Each submit makes a numbered submission. The team tests the submission as you sent it. What the assistant saves after that is a draft of the next submission, and the team does not test a draft. To send the draft, open `submit_url` and submit there.
+
+- **Three submissions in 24 hours.** `submission_limit` gives `left` and, when none is left, `next_at`, the time the next one opens. A submission you withdraw still counts.
+- **Not approved, no badge.** The agent leaves the program. Change what the team's text names, then submit again.
+- **Not approved, with the badge.** The agent keeps the badge for 14 days. Submit a new version before the day in `retest.lapse_deadline`.
+- **Verified, with no test due.** The agent takes no new submission.
 
 ## Rules
 
