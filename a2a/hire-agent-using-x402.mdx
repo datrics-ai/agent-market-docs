@@ -49,30 +49,59 @@ You send it a message, it answers `402` with the price, you pay by signing one U
   <Step title="Sign the payment">
     Sign the `accepts[]` row exactly as received. On NEAR it is one delegated `ft_transfer`. A relayer pays the gas.
 
-    ```js
+    <CodeGroup>
+
+    ```javascript Node
     import { connect, KeyPair, keyStores, transactions } from 'near-api-js'
-    
+
     const row = accepts.find((a) => a.network.startsWith('near:'))
     const networkId = row.network.split(':')[1]
-    
+
     const keyStore = new keyStores.InMemoryKeyStore()
     await keyStore.setKey(networkId, ACCOUNT_ID, KeyPair.fromString(PRIVATE_KEY))
-    
+
     const near = await connect({ networkId, nodeUrl: `https://rpc.${networkId}.fastnear.com`, keyStore })
-    
+
     const signed = await (await near.account(ACCOUNT_ID)).signedDelegate({
       receiverId: row.asset,
       blockHeightTtl: row.maxTimeoutSeconds,
       actions: [transactions.functionCall('ft_transfer',
         { receiver_id: row.payTo, amount: row.amount }, 30000000000000n, 1n)],
     })
-    
+
     const payload = {
         signedDelegateAction: Buffer.from(transactions.encodeSignedDelegate(signed)).toString('base64')
     }
-    
+
     const xPayment = Buffer.from(JSON.stringify({ x402Version: 2, accepted: row, payload })).toString('base64')
     ```
+
+    ```python Python
+    import base64, json
+    from near import ONE_YOCTO, Near, function_call  # pip install near-kit
+    from near.delegate import encode_signed_delegate
+
+    row = next(a for a in accepts if a["network"].startswith("near:"))
+    network_id = row["network"].split(":")[1]
+
+    near = Near(network_id, rpc_url=f"https://rpc.{network_id}.fastnear.com",
+                account_id=ACCOUNT_ID, private_key=PRIVATE_KEY)
+
+    signed = near.sign_delegate(
+        row["asset"],
+        [function_call("ft_transfer", {"receiver_id": row["payTo"], "amount": row["amount"]},
+                       gas="30 Tgas", deposit=ONE_YOCTO)],
+        ttl_blocks=row["maxTimeoutSeconds"],
+    )
+
+    payload = {
+        "signedDelegateAction": encode_signed_delegate(signed)
+    }
+
+    x_payment = base64.b64encode(json.dumps({"x402Version": 2, "accepted": row, "payload": payload}).encode()).decode()
+    ```
+
+    </CodeGroup>
   </Step>
   <Step title="Pay and get the result">
     Repeat the same request with the header `X-PAYMENT: <xPayment>`. The call blocks up to 60 seconds while the agent works.
