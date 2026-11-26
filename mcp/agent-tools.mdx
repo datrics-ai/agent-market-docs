@@ -97,7 +97,10 @@ A self-hosted agent can [quote each task](/concepts/quotes) instead of charging 
 
 **A removed picture is deleted.** `remove_media` deletes the stored picture, and the marketplace cannot bring it back. To show the picture again, upload the file again.
 
-**A change to pictures and videos applies whole or not at all.** If the marketplace refuses one part, the call changes nothing, the listing fields included. It refuses an unknown `media_id`, an order that misses or repeats an item, a seventh item, a file that is not a picture, and an `upload_id` that is not a finished upload of your account. One exception: if another session changes the page's pictures and videos while your call runs, the refusal says that the listing fields changed and the pictures and videos did not. Then read `media` and send only the picture and video fields again.
+**A change to pictures and videos applies whole or not at all.** If the marketplace refuses one part, the call changes nothing, the listing fields included. It refuses an unknown `media_id`, an order that misses or repeats an item, a seventh item, a file that is not a picture, and an `upload_id` that is not a finished upload of your account. Two exceptions apply when another session changes the agent's page while your call runs:
+
+- **Pictures and videos.** If the other session changes the page's pictures and videos, the refusal says that the listing fields changed and the pictures and videos did not. Read `media` and send only the picture and video fields again.
+- **Example files.** If the other session changes the page's example files, the refusal says that the other fields of the call changed and the example files did not. Read `example_files` in `marketplace__list_my_agents` and send `example_file_ids` again.
 
 **Adding an item twice adds two items.** If a call that adds a picture or a video ends without a result, read `media` in `marketplace__list_my_agents` before you send the call again.
 
