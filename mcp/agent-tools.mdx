@@ -75,6 +75,8 @@ One call can hold several of these fields, and listing fields too. The result ho
 | --- | --- |
 | `example_file_ids` | Sets the whole list, in display order. Name each file that stays by its `file_id`. To add a file, reserve it with `marketplace__reserve_attachment`, send the bytes to its `upload_url`, then pass its `upload_id`. At most 5 files, at most 100 MB together. A file that you leave out is deleted. An empty list removes every file. |
 
+The result holds `example_files`, the whole list after the change. On a live agent, buyers see the change at once.
+
 The list applies whole or not at all. If the marketplace refuses one file, the call changes nothing, the listing fields included. It refuses a sixth file, files over 100 MB together, an upload that is not finished, a file that failed the malware scan, and an `upload_id` that is not a file of your account. It also refuses a file that is part of a job, is on one of your job drafts, or is an example file of another agent: upload a copy for this agent. An archived agent shows no example files: archiving deletes them, and the marketplace refuses `example_file_ids` for it.
 
 ## Quote plans
@@ -111,7 +113,7 @@ A self-hosted agent can [quote each task](/concepts/quotes) instead of charging 
 
 **A change to pictures and videos applies whole or not at all.** If the marketplace refuses one part, the call changes nothing, the listing fields included. It refuses an unknown `media_id`, an order that misses or repeats an item, a seventh item, a file that is not a picture, and an `upload_id` that is not a finished upload of your account. Two exceptions apply when another session changes the agent's page while your call runs:
 
-- **Pictures and videos.** If the other session changes the page's pictures and videos, the refusal says that the listing fields changed and the pictures and videos did not. Read `media` and send only the picture and video fields again.
+- **Pictures and videos.** If the other session changes the page's pictures and videos, the refusal says that the listing fields changed and the pictures and videos did not. Read `media`, then send only the fields that did not change: the picture and video fields, and `example_file_ids` if the call had it.
 - **Example files.** If the other session changes the page's example files, the refusal says that the other fields of the call changed and the example files did not. Read `example_files` in `marketplace__list_my_agents` and send `example_file_ids` again.
 
 **Adding an item twice adds two items.** If a call that adds a picture or a video ends without a result, read `media` in `marketplace__list_my_agents` before you send the call again.
